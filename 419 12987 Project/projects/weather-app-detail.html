@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather App | Project Details</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Project Detail Page Specific Styles */
+        .project-detail {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .project-title {
+            font-size: 2.8rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #4F46E5, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .meta-item {
+            text-align: center;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #F0F9FF, #E0F2FE);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+            border: 1px solid #BFDBFE;
+        }
+        
+        .meta-label {
+            display: block;
+            font-weight: 500;
+            color: #3B82F6;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .meta-value {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .project-hero {
+            margin: 50px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+            border: 1px solid #E0F2FE;
+            position: relative;
+        }
+        
+        .project-hero img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .project-section {
+            margin: 60px 0;
+            padding: 0;
+        }
+        
+        .project-section h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3B82F6;
+            display: inline-block;
+        }
+        
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #E0F2FE;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(59, 130, 246, 0.15);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4F46E5, #3B82F6);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.2);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--gray-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .tech-category {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.08);
+            border: 1px solid #E0F2FE;
+        }
+        
+        .tech-category h3 {
+            color: #3B82F6;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tech-category h3 i {
+            font-size: 1.2rem;
+        }
+        
+        .tech-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tech-category li {
+            padding: 12px 0;
+            border-bottom: 1px solid #F1F5F9;
+            color: var(--dark-color);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tech-category li:before {
+            content: "▸";
+            color: #3B82F6;
+            font-weight: bold;
+        }
+        
+        .tech-category li:last-child {
+            border-bottom: none;
+        }
+        
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .screenshot {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #E0F2FE;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #E0F2FE;
+        }
+        
+        .screenshot p {
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--gray-color);
+            background: white;
+            font-weight: 500;
+        }
+        
+        .lessons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .lesson-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #3B82F6;
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.08);
+            border-top: 1px solid #E0F2FE;
+            border-right: 1px solid #E0F2FE;
+            border-bottom: 1px solid #E0F2FE;
+        }
+        
+        .lesson-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .lesson-card h3 i {
+            color: #3B82F6;
+        }
+        
+        .lesson-card p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray-color);
+        }
+        
+        .project-links-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 60px;
+            justify-content: center;
+            padding-top: 40px;
+            border-top: 2px dashed #E0F2FE;
+        }
+        
+        .project-links-detail a {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-links-detail .btn-primary {
+            background: linear-gradient(135deg, #4F46E5, #3B82F6);
+            border: none;
+        }
+        
+        .project-links-detail .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+        }
+        
+        .project-links-detail .btn-secondary {
+            border: 2px solid #3B82F6;
+            color: #3B82F6;
+        }
+        
+        .project-links-detail .btn-secondary:hover {
+            background: #3B82F6;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .project-links-detail .btn-nav {
+            background: var(--dark-color);
+        }
+        
+        /* Weather-specific styling */
+        .weather-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #F0F9FF, #E0F2FE);
+            border-radius: 15px;
+            border: 1px solid #BFDBFE;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3B82F6;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--gray-color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* API Integration Section */
+        .api-integration {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 2px solid #E0F2FE;
+        }
+        
+        .api-integration h3 {
+            color: #3B82F6;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .api-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .api-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .api-feature i {
+            color: #3B82F6;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .project-title {
+                font-size: 2.4rem;
+            }
+            
+            .project-hero img {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2.2rem;
+            }
+            
+            .project-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .meta-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .project-hero img {
+                height: 280px;
+            }
+            
+            .features-grid,
+            .tech-stack,
+            .screenshots-grid,
+            .lessons,
+            .weather-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-links-detail {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-links-detail a {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .feature-card,
+            .tech-category,
+            .lesson-card,
+            .api-integration {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-title {
+                font-size: 1.9rem;
+            }
+            
+            .project-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">JD</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../index.html" class="btn-nav">Back Home</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="project-detail">
+        
+        <section class="project-header">
+            <h1 class="project-title">Real-Time Weather App</h1>
+            <p class="project-subtitle">A modern, feature-rich weather application providing accurate forecasts, interactive maps, and severe weather alerts with beautiful visualizations</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">6 Weeks</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Frontend Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">APIs Used</span>
+                    <span class="meta-value">OpenWeather, MapBox</span>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="project-hero">
+            <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                 alt="Weather App Dashboard with Interactive Map">
+        </section>
+
+        
+        <div class="weather-stats">
+            <div class="stat-item">
+                <span class="stat-value">200k+</span>
+                <span class="stat-label">Cities Database</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">&lt;1s</span>
+                <span class="stat-label">Response Time</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">99.8%</span>
+                <span class="stat-label">Accuracy Rate</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">5-Day</span>
+                <span class="stat-label">Detailed Forecast</span>
+            </div>
+        </div>
+
+        <!-- Problem & Solution -->
+        <section class="project-section">
+            <h2>Problem Statement</h2>
+            <p>Most weather applications either provide too much technical data that overwhelms users or oversimplify to the point of being inaccurate. Users need a balance: precise, reliable weather information presented in an intuitive, visually appealing interface that works seamlessly across all devices.</p>
+            
+            <h2>Solution</h2>
+            <p>I developed a real-time weather application that combines multiple weather data sources with beautiful data visualization. The app provides accurate current conditions, detailed forecasts, severe weather alerts, and an interactive map—all within a responsive, user-friendly interface that adapts to both casual users and weather enthusiasts.</p>
+        </section>
+
+        
+        <section class="project-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Interactive Weather Map</h3>
+                    <p>Live weather visualization with layers for temperature, precipitation, wind, and pressure systems.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Severe Weather Alerts</h3>
+                    <p>Real-time push notifications for storms, hurricanes, floods, and other dangerous conditions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Hourly & Daily Forecasts</h3>
+                    <p>Detailed 48-hour hourly forecast and 7-day extended forecast with interactive charts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Sun & Moon Data</h3>
+                    <p>Sunrise/sunset times, golden hour, blue hour, and moon phase information.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Advanced Metrics</h3>
+                    <p>Feels-like temperature, UV index, humidity, visibility, and detailed wind information.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Offline Functionality</h3>
+                    <p>View recent forecasts without internet connection using local storage and service workers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Integration -->
+        <section class="api-integration">
+            <h3><i class="fas fa-plug"></i> API Integration & Data Sources</h3>
+            <p>The application integrates multiple weather data sources to ensure accuracy and reliability:</p>
+            
+            <div class="api-features">
+                <div class="api-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>OpenWeather API</strong>
+                        <p>Primary weather data, current conditions, and forecasts</p>
+                    </div>
+                </div>
+                <div class="api-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>MapBox API</strong>
+                        <p>Interactive maps and geolocation services</p>
+                    </div>
+                </div>
+                <div class="api-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Weather.gov API</strong>
+                        <p>Severe weather alerts and warnings (US only)</p>
+                    </div>
+                </div>
+                <div class="api-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>IP Geolocation</strong>
+                        <p>Automatic location detection on first visit</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Used -->
+        <section class="project-section">
+            <h2>Technologies Used</h2>
+            <div class="tech-stack">
+                <div class="tech-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <ul>
+                        <li>React 18 with Functional Components</li>
+                        <li>Context API for State Management</li>
+                        <li>Chart.js & Recharts for Visualizations</li>
+                        <li>Leaflet.js for Interactive Maps</li>
+                        <li>Styled Components & CSS Modules</li>
+                        <li>Axios for API Requests</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-tools"></i> Development Tools</h3>
+                    <ul>
+                        <li>TypeScript for Type Safety</li>
+                        <li>Vite for Fast Development</li>
+                        <li>ESLint & Prettier for Code Quality</li>
+                        <li>Jest & React Testing Library</li>
+                        <li>Chrome DevTools & Lighthouse</li>
+                        <li>Git & GitHub for Version Control</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-rocket"></i> Deployment & Performance</h3>
+                    <ul>
+                        <li>Netlify for Hosting</li>
+                        <li>Service Workers for PWA</li>
+                        <li>Image & Asset Optimization</li>
+                        <li>Code Splitting & Lazy Loading</li>
+                        <li>LocalStorage for Caching</li>
+                        <li>Error Boundaries & Fallbacks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="project-section">
+            <h2>App Screenshots</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Weather Dashboard">
+                    <p>Main dashboard with current conditions</p>
+                </div>
+                <div class="screenshot">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Forecast Charts">
+                    <p>Interactive forecast visualization</p>
+                </div>
+                <div class="screenshot">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Weather Map">
+                    <p>Interactive weather map view</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Learned -->
+        <section class="project-section">
+            <h2>What I Learned</h2>
+            <div class="lessons">
+                <div class="lesson-card">
+                    <h3><i class="fas fa-bolt"></i> API Rate Limiting</h3>
+                    <p>Implemented efficient caching strategies and request queuing to handle API rate limits while maintaining app performance.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3><i class="fas fa-mobile-alt"></i> PWA Implementation</h3>
+                    <p>Learned to create Progressive Web Apps with service workers for offline functionality and app-like experience.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Performance Optimization</h3>
+                    <p>Optimized bundle size, implemented lazy loading, and reduced API calls to achieve sub-2-second load times.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3><i class="fas fa-map-marked-alt"></i> Geolocation Handling</h3>
+                    <p>Mastered browser geolocation API, fallback mechanisms, and user permission workflows for location services.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3><i class="fas fa-chart-bar"></i> Data Visualization</h3>
+                    <p>Gained expertise in creating responsive, accessible charts that work across all device sizes and screen readers.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3><i class="fas fa-shield-alt"></i> Error Handling</h3>
+                    <p>Implemented comprehensive error boundaries, API fallbacks, and user-friendly error messages for all failure scenarios.</p>
+                </div>
+            </div>
+            
+            <div class="project-links-detail">
+                
+                <a href="../index.html" class="btn-nav">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Emmanuel. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/emmanuelainai" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+                <a href="https://twitter.com/yomiaina" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

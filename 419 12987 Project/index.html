@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Aina | Frontend Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">EIA</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="projects/project-detail.html" class="btn-nav">View Details</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Emmanuel Ibikunle</span></h1>
+                <h2 class="hero-subtitle">Frontend Developer & UI Enthusiast</h2>
+                <p class="hero-description">I build clean, responsive websites with focus on user experience and performance.</p>
+                <a href="#projects" class="btn-primary">View My Work</a>
+            </div>
+            
+            <div class="hero-image">
+             <img src="assets/images/headshot.jpg" alt="Your Name - Frontend Developer" class="profile-photo">
+            </div>
+                    
+            </div>
+        </section>
+
+        
+        <section id="about" class="section about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate frontend developer with 2 years of experience building web applications. I love creating intuitive interfaces that solve real problems.</p>
+                    <p>My technical focus includes responsive design, JavaScript frameworks, and performance optimization. Currently learning more about React and modern CSS.</p>
+                    <p>When I'm not coding, I enjoy photography, hiking, and contributing to open-source projects.</p>
+                </div>
+                <div class="skills">
+                    <h3>Skills & Technologies</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Here are some of my recent works</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-commerce Website">
+                    </div>
+                    <div class="project-content">
+                        <h3>Modern E-Commerce Store</h3>
+                        <p>A fully responsive online store with shopping cart, product filtering, and checkout flow.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe API</span>
+                        </div>
+                        <div class="project-links">
+                            
+                            <a href="projects/project-detail.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Weather App">
+                    </div>
+                    <div class="project-content">
+                        <h3>Real-Time Weather App</h3>
+                        <p>A weather application with location detection, 5-day forecast, and interactive charts.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>API Integration</span>
+                            <span>Chart.js</span>
+                            <span>CSS Grid</span>
+                        </div>
+                        <div class="project-links">
+                            
+                            <a href="projects/weather-app-detail.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+
+               
+            </div>
+        </section>
+
+        
+        <section id="contact" class="section cta">
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="cta-description">I'm open to freelance opportunities, internships, or just a friendly chat about tech!</p>
+            
+            <div class="contact-options">
+                <a href="mailto:emmanuel.ibikunle-aina@pau.edu.ng" class="contact-btn email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Send Email</span>
+                </a>
+                
+                <a href="https://wa.me/+2348182531861" target="_blank" class="contact-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                
+                <button class="contact-btn hire-me" id="hireBtn">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Hire Me</span>
+                </button>
+            </div>
+            
+            <p class="cta-note">I typically respond within 24 hours.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Emmanuel. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/emmanuelainai" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+                <a href="https://twitter.com/yomiaina" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

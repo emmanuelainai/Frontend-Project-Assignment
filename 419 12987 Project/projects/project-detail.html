@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce Store | Project Details</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        
+        .project-detail {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .project-title {
+            font-size: 2.8rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .meta-item {
+            text-align: center;
+            padding: 15px 25px;
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .meta-label {
+            display: block;
+            font-weight: 500;
+            color: var(--gray-color);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .meta-value {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .project-hero {
+            margin: 50px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .project-hero img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .project-section {
+            margin: 60px 0;
+            padding: 0;
+        }
+        
+        .project-section h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+        }
+        
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--dark-color);
+        }
+        
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--gray-color);
+            margin: 0;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .tech-category {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .tech-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .tech-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tech-category li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--dark-color);
+            font-size: 1rem;
+        }
+        
+        .tech-category li:last-child {
+            border-bottom: none;
+        }
+        
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .screenshot {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .screenshot p {
+            padding: 15px;
+            margin: 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--gray-color);
+            background: white;
+        }
+        
+        .lessons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .lesson-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .lesson-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .lesson-card p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .project-links-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+        
+        .project-links-detail a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2.2rem;
+            }
+            
+            .project-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .meta-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .project-hero img {
+                height: 250px;
+            }
+            
+            .features-grid,
+            .tech-stack,
+            .screenshots-grid,
+            .lessons {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-links-detail {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-links-detail a {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-title {
+                font-size: 1.8rem;
+            }
+            
+            .project-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .feature-card,
+            .tech-category,
+            .lesson-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">JD</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../index.html" class="btn-nav">Back Home</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="project-detail">
+        <!-- Project Header -->
+        <section class="project-header">
+            <h1 class="project-title">Modern E-Commerce Store</h1>
+            <p class="project-subtitle">A fully responsive online shopping platform with advanced cart, checkout, and admin features</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">3 Months</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Full Stack Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value">Live & Maintained</span>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="project-hero">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                 alt="E-commerce Dashboard Interface">
+        </section>
+
+        <!-- Problem & Solution -->
+        <section class="project-section">
+            <h2>Problem Statement</h2>
+            <p>Small and medium businesses struggle with existing e-commerce solutions that are either too expensive, too complex, or lack essential features like real-time inventory management, mobile optimization, and integrated payment processing.</p>
+            
+            <h2>Solution</h2>
+            <p>I developed a modern, affordable e-commerce platform that provides enterprise-level features with an intuitive interface. The solution includes a responsive storefront, secure payment integration, real-time analytics, and an easy-to-use admin dashboard that requires minimal technical knowledge to operate.</p>
+        </section>
+
+       
+        <section class="project-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Smart Cart System</h3>
+                    <p>Persistent shopping cart with local storage, quantity adjustments, and real-time price calculations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Advanced Filtering</h3>
+                    <p>Multi-criteria product filtering with instant search results and sorting options.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Checkout</h3>
+                    <p>PCI-compliant payment processing with multiple payment methods and order tracking.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Real-time sales analytics, inventory tracking, and customer behavior insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Used -->
+        <section class="project-section">
+            <h2>Technologies Used</h2>
+            <div class="tech-stack">
+                <div class="tech-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>React 18 with TypeScript</li>
+                        <li>Redux Toolkit for state management</li>
+                        <li>React Router v6</li>
+                        <li>Tailwind CSS + Styled Components</li>
+                        <li>Chart.js for data visualization</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js with Express.js</li>
+                        <li>MongoDB with Mongoose ODM</li>
+                        <li>JWT Authentication & Authorization</li>
+                        <li>Stripe & PayPal Payment APIs</li>
+                        <li>Redis for session caching</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>DevOps & Tools</h3>
+                    <ul>
+                        <li>Docker & Docker Compose</li>
+                        <li>CI/CD with GitHub Actions</li>
+                        <li>Vercel (Frontend Deployment)</li>
+                        <li>AWS EC2 (Backend Deployment)</li>
+                        <li>Postman & Jest for testing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="project-section">
+            <h2>Interface Screenshots</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Product Catalog Page">
+                    <p>Product catalog with filtering options</p>
+                </div>
+                <div class="screenshot">
+                    <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Shopping Cart Interface">
+                    <p>Shopping cart with order summary</p>
+                </div>
+            
+            </div>
+        </section>
+
+        
+        <section class="project-section">
+            <h2>What I Learned</h2>
+            <div class="lessons">
+                <div class="lesson-card">
+                    <h3>Performance Optimization</h3>
+                    <p>Implemented code splitting, image lazy loading, and caching strategies to achieve 95+ Lighthouse scores.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3>State Management at Scale</h3>
+                    <p>Mastered Redux Toolkit for managing complex e-commerce state including cart, user sessions, and inventory.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3>Security Best Practices</h3>
+                    <p>Learned to implement proper authentication, input validation, and secure payment processing.</p>
+                </div>
+                <div class="lesson-card">
+                    <h3>Database Design</h3>
+                    <p>Designed efficient MongoDB schemas for products, orders, users, and inventory with proper indexing.</p>
+                </div>
+            </div>
+            
+            <div class="project-links-detail">
+                
+                <a href="../index.html" class="btn-nav">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 John Doe. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/emmanuelainai" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+                <a href="https://twitter.com/yomiaina" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
